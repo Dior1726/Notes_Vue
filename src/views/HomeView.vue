@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import { CalendarIcon } from 'lucide-vue-next'
+import Button from '@/components/ui/button/Button.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <Button>Click me <CalendarIcon /> </Button>
   </main>
 </template>
