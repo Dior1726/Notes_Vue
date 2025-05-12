@@ -10,8 +10,12 @@
           {{ item }}
         </div>
       </div>
-      <Button variant="ghost">
-        <HeartIcon />
+      <Button variant="ghost" @click="postStore.addToFavorites(post.id)">
+        <HeartIcon
+          :class="[postStore.posts.includes(post.id) ? 'text-red-500' : 'text-slate-600']"
+          :fill="postStore.posts.includes(post.id) ? 'red' : 'none'"
+          :size="14"
+        />
       </Button>
     </div>
     <div className="text-slate-700 my-2 font-semibold">{{ post.title }}</div>
@@ -44,6 +48,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
+import { usePostStore } from '@/stores/post'
+
+const postStore = usePostStore()
 
 defineProps(['post'])
 </script>
