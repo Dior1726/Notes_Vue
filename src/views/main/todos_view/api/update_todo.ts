@@ -1,13 +1,13 @@
-import TodoService from "@/services/todo.service";
-import { toast } from "sonner";
+import TodoService from '@/services/todo.service'
+import { toast } from 'vue-sonner'
 
 export const updateTodo = async (id: number, payload: any) => {
   try {
-    const { data } = await TodoService.update(id, payload);
-    toast.success("Todo updated successfully");
-    return data;
+    const { data } = await TodoService.update(id, payload)
+    toast.success('Todo updated successfully')
+    return data
   } catch (error) {
-    toast.error("Error updating todo");
-    throw error;
+    toast.error('Error updating todo')
+    throw error
   }
-};
+}
