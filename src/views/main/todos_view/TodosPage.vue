@@ -4,7 +4,7 @@
     <div class="bg-white rounded-xl p-5 max-w-2xl mx-auto shadow-sm">
       <div class="flex items-center justify-between mb-5">
         <h1 class="text-xl font-semibold text-center">Todos</h1>
-        <Button>Add Todo</Button>
+        <!-- <Button>Add Todo</Button> -->
       </div>
       <todo-item
         v-for="item in todoStore.todos"
@@ -19,7 +19,6 @@
 <script setup lang="ts">
 import { useQuery, useMutation } from '@tanstack/vue-query'
 import { getTodos } from './api/get_todos'
-import { Button } from '@/components/ui/button'
 import { useTodoStore } from '@/stores/todo'
 import { updateTodo } from './api/update_todo'
 import TodoItem from './components/todo_item/TodoItem.vue'
